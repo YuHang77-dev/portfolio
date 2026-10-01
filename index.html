@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李翔太 | Portfolio</title>
+  <meta name="description" content="フルスタックエンジニア 李翔太 のポートフォリオサイト。これまでに制作した作品と経歴を掲載しています。">
+  <meta property="og:title" content="李翔太 | Portfolio">
+  <meta property="og:description" content="フルスタックエンジニア 李翔太 のポートフォリオサイト">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="#about" class="nav__link">About</a></li>
+            <li><a href="#skills" class="nav__link">Skills</a></li>
+            <li><a href="#works" class="nav__link">Works</a></li>
+            <li><a href="#experience" class="nav__link">Experience</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero__inner">
+        <p class="hero__greeting">Hello, I'm</p>
+        <h1 class="hero__name">李翔太</h1>
+        <p class="hero__title">フルスタックエンジニア</p>
+        <p class="hero__lead">
+          ユーザー体験を大切にした Web アプリケーションを作っています。<br>
+          技術と課題解決の両面から、価値あるプロダクトづくりを目指します。
+        </p>
+        <div class="hero__actions">
+          <a href="#works" class="btn btn--primary">作品を見る</a>
+          <a href="#contact" class="btn btn--ghost">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <p class="section__label">01 — About</p>
+        <h2 class="section__title">自己紹介</h2>
+        <div class="about">
+          <div class="about__image">
+            <img src="assets/images/profile.jpg" alt="李翔太" loading="lazy">
+          </div>
+          <div class="about__text">
+            <p>はじめまして、李翔太と申します。フルスタックエンジニアです。</p>
+            <p>
+              日本企業との取引実績は9年以上。日本のビジネス文化や品質基準、開発現場でのコミュニケーションへの理解には自信があり、日本語での MTG・要件定義・ドキュメント作成にも対応しています。
+            </p>
+            <p>
+              これまで Web アプリケーション開発を中心に、フロントエンドからバックエンド、インフラ構築まで一通り経験してきました。要件定義から実装・運用まで一貫して関われるのが強みです。
+            </p>
+            <p>
+              「使いやすさ」と「保守しやすさ」の両立を大切にしながら、チームで協働してプロダクトを育てていくことに価値を感じています。技術選定では流行に流されず、課題解決に最適な手段を見極めることを意識しています。
+            </p>
+            <p>
+              PM・PL としてチームを率いた経験もあります。マッチングアプリの新機能開発（10名体制）や不動産サイトのリニューアル（8名体制）では PL として技術リードとタスク・品質管理を担当し、開発企業のコーポレートサイト新規構築（10名体制）では PM として要件定義からスケジュール・品質管理までを統括しました。一方で、技術選定から実装・インフラまで一人で完遂する小規模案件も多く手がけており、規模の異なる開発体制の双方で実績があります。
+            </p>
+            <p>
+              新しい技術を学ぶことが好きで、最近は AI 関連技術 — 特に LLM（大規模言語モデル）を活用したアプリケーション開発、RAG（検索拡張生成）や AI エージェントの実装に深く取り組んでいます。
+              日々の開発にも積極的に AI を取り入れ、開発効率の向上や新しいユーザー体験づくりに挑戦しています。
+            </p>
+            <dl class="about__meta">
+              <div class="about__meta-item">
+                <dt>ロール</dt><dd>フルスタックエンジニア</dd>
+              </div>
+              <div class="about__meta-item">
+                <dt>稼働形態</dt><dd>業務委託 / フルリモート</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section--alt section--with-bg-image">
+      <div class="container">
+        <p class="section__label">02 — Skills</p>
+        <h2 class="section__title">スキル</h2>
+        <div class="skills">
+          <div class="skill-group">
+            <h3 class="skill-group__title">Frontend</h3>
+            <ul class="skill-list">
+              <li>TypeScript / React 18・19（5年）</li>
+              <li>Next.js 14・15（App Router）</li>
+              <li>Vue 3 / Nuxt / Inertia.js / Pinia（4年）</li>
+              <li>Tailwind CSS / styled-components</li>
+              <li>Storybook / Jest / openapi-typescript</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Backend</h3>
+            <ul class="skill-list">
+              <li>PHP / Laravel 5〜12（7年）</li>
+              <li>Node.js / NestJS（3年）</li>
+              <li>Python / Django / AWS Lambda（3年）</li>
+              <li>REST API / OpenAPI 設計</li>
+              <li>Repository / UseCase・DTO パターン</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Cloud &amp; Infra</h3>
+            <ul class="skill-list">
+              <li>AWS（EC2 / RDS・Aurora / S3 / Lambda / Cognito / SES / ElastiCache / CloudFront）（5年）</li>
+              <li>Docker / Firebase / GCP</li>
+              <li>MySQL / PostgreSQL / DynamoDB / Redis</li>
+              <li>GitHub Actions（CI/CD）/ Nginx</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Auth / Payment / AI</h3>
+            <ul class="skill-list">
+              <li>AWS Cognito マルチプール / JWT / OAuth / 2段階認証（5案件以上）</li>
+              <li>Stripe Connect / PAY.JP / Square / GMO / PayPay</li>
+              <li>OpenAI API（GPT-4o）組み込み 3案件</li>
+              <li>Swift / Kotlin（既存アプリ保守対応可）</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">No-Code</h3>
+            <ul class="skill-list">
+              <li>Bubble（実務案件 8件・全案件で設計から担当）</li>
+              <li>SaaS開発（マルチテナント設計）</li>
+              <li>会員・予約・決済機能の構築</li>
+              <li>業務システムDX（Excel・紙運用のシステム化）</li>
+              <li>ネイティブアプリ化 / 公式LINE連携</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="certifications">
+          <h3 class="certifications__title">資格・認定</h3>
+          <ul class="certifications__list">
+            <li><span class="certifications__year">2020</span><span>PHP 技術者認定試験 合格</span></li>
+            <li><span class="certifications__year">2020</span><span>JavaScript 技術者認定試験 合格</span></li>
+            <li><span class="certifications__year">2019</span><span>情報処理技術者</span></li>
+            <li><span class="certifications__year">2018</span><span>HTML5 プロフェッショナル認定資格</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section section--with-works-bg">
+      <div class="container">
+        <p class="section__label">03 — Works</p>
+        <h2 class="section__title">制作実績</h2>
+
+        <div class="works__filter" id="worksFilter" role="group" aria-label="実績のカテゴリー絞り込み">
+          <button class="works__filter-btn" data-filter="all" aria-pressed="true">すべて</button>
+          <button class="works__filter-btn" data-filter="web" aria-pressed="false">Webシステム</button>
+          <button class="works__filter-btn" data-filter="frontend" aria-pressed="false">フロントエンド</button>
+          <button class="works__filter-btn" data-filter="mobile" aria-pressed="false">モバイルアプリ</button>
+          <button class="works__filter-btn" data-filter="nocode" aria-pressed="false">ノーコード（Bubble）</button>
+          <button class="works__filter-btn" data-filter="cms" aria-pressed="false">CMS・サイト制作</button>
+        </div>
+
+        <p class="works__count" id="worksCount"></p>
+
+        <div class="works" id="worksGrid">
+          <article class="work-card" data-category="web mobile">
+            <a href="works/unsealpass.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/unsealpass-logo.jpg" alt="unsealpass" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">unsealpass（限定EC・アプリ）</h3>
+                <p class="work-card__desc">
+                  コンビニ販売シールの購入者だけが限定グッズを買えるEC。Expoアプリ・管理画面・APIを一人で構築。AIレシート審査を実装。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Expo</li>
+                  <li>Next.js 14</li>
+                  <li>Fastify</li>
+                  <li>Gemini 2.5</li>
+                  <li>Stripe</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="frontend">
+            <a href="works/cbre-properties.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/cbre-logo.jpg" alt="CBRE" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">CBRE Japan 物件検索・会員管理システム</h3>
+                <p class="work-card__desc">
+                  世界最大の事業用不動産サービス会社の物件検索システム。約26万件の物件データを扱うフロントエンドリニューアル（8名体制）。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Next.js 14</li>
+                  <li>TypeScript</li>
+                  <li>Turborepo</li>
+                  <li>AWS</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/fitness-map-analysis.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/gymlocation-logo.jpg" alt="GYMLOCATION" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">GYMLOCATION（商圏分析SaaS）</h3>
+                <p class="work-card__desc">
+                  全国のフィットネス施設約12万件 × e-Stat人口統計を地図上で掛け合わせる商圏分析SaaS。自然文で検索できるAI検索を搭載。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Vue 3</li>
+                  <li>Laravel 12</li>
+                  <li>OpenAI API</li>
+                  <li>Google Maps</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/ec-stock-automation.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/ec-stock-automation-logo.jpg" alt="在庫更新自動化" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">複数モール在庫更新自動化システム</h3>
+                <p class="work-card__desc">
+                  複数メーカーの在庫データを取り込み、Yahoo!／楽天向け在庫更新CSVを自動生成。日次バッチ・管理画面・インフラを一人で担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Laravel 13</li>
+                  <li>PHP 8.5</li>
+                  <li>Playwright</li>
+                  <li>AWS</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/ocr-document-converter.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/ocr-document-converter-logo.jpg" alt="Document AI" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">OCR／ドキュメント変換Webシステム</h3>
+                <p class="work-card__desc">
+                  PDF・画像・Office文書からテキストを抽出し Markdown／Text／JSON で出力。日本語OCRの多段フォールバックを設計。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Next.js 16</li>
+                  <li>FastAPI</li>
+                  <li>Docling</li>
+                  <li>EasyOCR</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/suc-gaming.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/suc-gaming-logo.jpg" alt="SUC GAMING" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">SUC GAMING（スキルマッチング）</h3>
+                <p class="work-card__desc">
+                  募集・応募・メッセージ・決済・レビュー・売上管理のマッチングサービス。Stripe Connect マーケットプレイス決済が中心。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Laravel 8</li>
+                  <li>Vue 2</li>
+                  <li>Stripe Connect</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/guinot-paris.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/guinot-logo.jpg" alt="美容サロンFC" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">美容サロンFC 会員EC・予約管理システム</h3>
+                <p class="work-card__desc">
+                  会員向けポータル（EC・施術申込・予約）と本部・店舗・メーカー向け管理の2アプリをゼロから開発。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Laravel 12</li>
+                  <li>Twig</li>
+                  <li>PAY.JP</li>
+                  <li>AWS</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/little-dvc-gallerycity.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/little-dvc-logo.jpg" alt="Little Da Vinci" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">リトル・ダビンチ（作品ギャラリー）</h3>
+                <p class="work-card__desc">
+                  子どもの作品を家族単位で共有・保管し、コンクール応募・AI評価を提供。Vue 3 SPA + Laravel API の前後分離構成。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Vue 3</li>
+                  <li>Laravel 9</li>
+                  <li>GPT-4o</li>
+                  <li>Square</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/mept-gait-analysis.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/mept-logo.jpg" alt="MePT" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">MePT（AI歩行分析 管理システム）</h3>
+                <p class="work-card__desc">
+                  東京科学大学発ベンチャーのAI歩行分析ソリューション。医療機関向け管理システムとPython Lambda APIを担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Next.js 15</li>
+                  <li>Lambda</li>
+                  <li>DynamoDB</li>
+                  <li>Cognito</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/spurcle-nexus.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/spurcle-logo.jpg" alt="Spurcle" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">spurcle（企業検索・イベント参加）</h3>
+                <p class="work-card__desc">
+                  4ロール（スタートアップ／地域企業／支援者／運営）向けの企業・ニュース・イベント閲覧・検索・応募プラットフォーム。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Next.js 14</li>
+                  <li>Laravel 11</li>
+                  <li>MicroCMS</li>
+                  <li>Cognito</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="frontend">
+            <a href="works/minnano-keirin.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/minnano-keirin-logo.jpg" alt="みんなの競輪" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">公営競技 Web投票・チャージシステム</h3>
+                <p class="work-card__desc">
+                  車券投票・チャージ・会員管理の統合サイト。Next.js App Router 55ルート超、4種決済をReact Queryで統合。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Next.js 15</li>
+                  <li>TypeScript</li>
+                  <li>React Query</li>
+                  <li>Jest</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/okinawa-matchmaking.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/okinawa-matchmaking-logo.jpg" alt="婚活マッチング" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">婚活マッチングWebシステム</h3>
+                <p class="work-card__desc">
+                  会員のプロフィール・検索・マッチング申請・メッセージと、管理者の審査・通報・配信。Laravel + Inertia + Vue 3 モノリス。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Laravel 10</li>
+                  <li>Inertia.js</li>
+                  <li>Vue 3</li>
+                  <li>PrimeVue</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/advio-marketplace.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/advio-logo.jpg" alt="Advio" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">Advio（経験・知識C2Cマーケット）</h3>
+                <p class="work-card__desc">
+                  経験・知識を売買するC2Cマーケットプレイス。eKYC・カート・レビュー・出金・管理画面を設計〜インフラまで一人で担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Laravel 8</li>
+                  <li>Vue 2</li>
+                  <li>eKYC</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="frontend">
+            <a href="works/townwork-frontend.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/townwork-logo.jpg" alt="タウンワーク" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">タウンワーク フロントエンドリニューアル</h3>
+                <p class="work-card__desc">
+                  リクルート運営の国内最大級アルバイト求人サービス。毎週約90万件の求人を扱う基盤のNext.js移行（12名体制）。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Next.js</li>
+                  <li>React</li>
+                  <li>TypeScript</li>
+                  <li>AWS RUM</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/kinaco-reservation.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/kinaco-logo.jpg" alt="Maison de Kinaco" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">Maison de Kinaco（出張予約）</h3>
+                <p class="work-card__desc">
+                  ネイリストの出張施術予約サービス。予約・決済・売上換金・リマインドを設計からインフラまで一人で担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>CakePHP 2</li>
+                  <li>PAY.JP</li>
+                  <li>GMOイプシロン</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/digital-content-c2c.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/digital-content-c2c-logo.jpg" alt="Digital C2C" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">デジタルコンテンツC2Cプラットフォーム</h3>
+                <p class="work-card__desc">
+                  デジタルコンテンツのC2C売買。3種決済・ダウンロード配信・SMS認証の機能追加とUI改善を担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Laravel 8</li>
+                  <li>Vue 2</li>
+                  <li>UnivaPay</li>
+                  <li>Twilio</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="web">
+            <a href="works/flyers-marketplace.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/flyers-logo.jpg" alt="FLYERS" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">FLYERS（C2C商品マーケット）</h3>
+                <p class="work-card__desc">
+                  C2C商品マーケットプレイス。ポイント／クレジット決済・出品売上換金・アフィリエイトをフルスタック＋インフラで担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Laravel 8</li>
+                  <li>Vue 2</li>
+                  <li>Socialite</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="cms">
+            <a href="works/next-realplan.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/next-realplan-logo.jpg" alt="Next Realplan" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">地域密着型 不動産サイト リニューアル</h3>
+                <p class="work-card__desc">
+                  埼玉県エリア特化の不動産仲介会社サイト。7,000件以上の物件検索プラットフォームのリニューアルをPLとして技術リード。
+                </p>
+                <ul class="work-card__tags">
+                  <li>WordPress</li>
+                  <li>PL</li>
+                  <li>多軸検索UI</li>
+                  <li>JSON-LD</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="cms">
+            <a href="works/skrum-corporate.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/skrum-logo.jpg" alt="Skrum" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">ソフトウェア開発企業 コーポレートサイト</h3>
+                <p class="work-card__desc">
+                  東京都渋谷区拠点の開発企業のコーポレートサイト新規構築をPMとして統括（10名体制）。
+                </p>
+                <ul class="work-card__tags">
+                  <li>WordPress</li>
+                  <li>PM</li>
+                  <li>Contact Form 7</li>
+                  <li>SEO</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="frontend">
+            <a href="works/paters-matching.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/paters-logo.jpg" alt="paters" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">paters 新機能開発（PL）</h3>
+                <p class="work-card__desc">
+                  累計会員数240万人超のマッチングアプリ。リアルタイムマッチング「会いたい」機能の設計・実装をPLとしてリード。
+                </p>
+                <ul class="work-card__tags">
+                  <li>React</li>
+                  <li>TypeScript</li>
+                  <li>PL</li>
+                  <li>課金・サブスク</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="frontend">
+            <a href="works/happymail-frontend.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/happymail-logo.jpg" alt="ハッピーメール" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">ハッピーメール 新機能開発</h3>
+                <p class="work-card__desc">
+                  累計会員数3,500万人超・運営歴25年以上の国内最大級マッチングサービス。募集・検索機能の拡張とデータ可視化UIを担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>JavaScript</li>
+                  <li>jQuery</li>
+                  <li>PC/SP対応</li>
+                  <li>GTM</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="cms">
+            <a href="works/mezaki-clinic.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/mezaki-clinic-logo.jpg" alt="クリニックサイト" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">医療クリニック公式サイト 新規構築</h3>
+                <p class="work-card__desc">
+                  宮城県仙台市の医療法人公式サイト。幅広い年齢層に配慮した情報設計とレスポンシブ実装を担当（5名体制）。
+                </p>
+                <ul class="work-card__tags">
+                  <li>HTML5</li>
+                  <li>jQuery</li>
+                  <li>レスポンシブ</li>
+                  <li>Lazy Load</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="nocode">
+            <a href="works/nocode-sakachim-plus.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/sakachim-plus-logo.jpg" alt="サカチムプラス" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">サカチムプラス（チームHP作成SaaS）</h3>
+                <p class="work-card__desc">
+                  サッカー・フットサル等のチーム専用HPを誰でも作れるマルチテナント型SaaS。自社開発として企画から運用まで一人で担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Bubble</li>
+                  <li>ノーコード</li>
+                  <li>SaaS</li>
+                  <li>マルチテナント</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="nocode">
+            <a href="works/nocode-satsuma-navi.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/satsuma-navi-logo.jpg" alt="薩摩就活ナビ" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">薩摩就活ナビ（就活支援）</h3>
+                <p class="work-card__desc">
+                  鹿児島の学生向け就活支援プラットフォーム。アドバイザー予約と求人・イベント検索を提供。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Bubble</li>
+                  <li>ノーコード</li>
+                  <li>予約システム</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="nocode">
+            <a href="works/nocode-capsule.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/capsule-logo.jpg" alt="Capsule" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">Capsule（薬学生向け情報ポータル）</h3>
+                <p class="work-card__desc">
+                  CBT・薬剤師国家試験対策、就活ノウハウ、実習体験談等のコンテンツポータル。GTMによる解析基盤も導入。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Bubble</li>
+                  <li>ノーコード</li>
+                  <li>GTM</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="nocode">
+            <a href="works/nocode-dokoke2.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/dokoke2-logo.jpg" alt="どこけ？II" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">どこけ？Ⅱ（在席管理クラウド）</h3>
+                <p class="work-card__desc">
+                  既存の在席管理・電子ホワイトボード製品を、クラウド版としてノーコードでリニューアル。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Bubble</li>
+                  <li>ノーコード</li>
+                  <li>在席管理</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="nocode">
+            <a href="works/nocode-haichi-dx.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/haichi-dx-logo.jpg" alt="配置DX" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">配置DX（人員・車両配置管理）</h3>
+                <p class="work-card__desc">
+                  運輸・建設業向けの配置管理システム。Excel・紙運用のアナログ業務をノーコードでシステム化。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Bubble</li>
+                  <li>ノーコード</li>
+                  <li>業務DX</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="nocode mobile">
+            <a href="works/nocode-toyutoyu.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/toyutoyu-logo.jpg" alt="と湯と湯" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">と湯と湯（温泉サブスクアプリ）</h3>
+                <p class="work-card__desc">
+                  東海地方の温泉・サウナ施設向けサブスク／ポイント制アプリ。公式LINE連携とネイティブアプリ化も実施。月間200人突破。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Bubble</li>
+                  <li>ノーコード</li>
+                  <li>LINE連携</li>
+                  <li>アプリ化</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="nocode">
+            <a href="works/nocode-ichiban-order.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/ichiban-order-logo.jpg" alt="一番飯店" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">一番飯店 オーダー管理システム</h3>
+                <p class="work-card__desc">
+                  高田馬場の老舗中華料理店向けオーダー管理システム。約2週間でベータ版リリース、業務負担を約50%削減。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Bubble</li>
+                  <li>ノーコード</li>
+                  <li>飲食店DX</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="nocode">
+            <a href="works/nocode-takagi.html" class="work-card__link">
+              <div class="work-card__thumb work-card__thumb--img">
+                <img src="assets/images/works/thumbs/takagi-logo.jpg" alt="TAKAGI" loading="lazy">
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">TAKAGI 製品サイト（株式会社高儀）</h3>
+                <p class="work-card__desc">
+                  電動工具・大工道具・園芸用品等を扱う総合工具メーカーの公式製品サイト。SEO基盤も整備。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Bubble</li>
+                  <li>ノーコード</li>
+                  <li>SEO</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="mobile">
+            <a href="works/sukusuku-growth-app.html" class="work-card__link">
+              <div class="work-card__thumb">
+                <span class="work-card__thumb-text">すくすく成長曲線</span>
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">すくすく成長曲線（成長記録アプリ）</h3>
+                <p class="work-card__desc">
+                  子どもの身長・体重を成長曲線として可視化するiOS/Androidアプリ。PLとして要件定義〜ストア申請〜保守まで担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Swift</li>
+                  <li>Kotlin</li>
+                  <li>Firebase</li>
+                  <li>PL</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="mobile">
+            <a href="works/kansai-coupon-app.html" class="work-card__link">
+              <div class="work-card__thumb">
+                <span class="work-card__thumb-text">Kansai Coupon</span>
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">Kansai Special Coupon（観光案内）</h3>
+                <p class="work-card__desc">
+                  関西エリアの観光情報・クーポンアプリ。DB設計・プッシュ通知設計・地図連携・多言語対応を担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Swift</li>
+                  <li>Firebase</li>
+                  <li>DB設計</li>
+                  <li>多言語</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card" data-category="mobile">
+            <a href="works/mamii-memo-app.html" class="work-card__link">
+              <div class="work-card__thumb">
+                <span class="work-card__thumb-text">まみぃメモ</span>
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">まみぃメモ（健康管理アプリ）</h3>
+                <p class="work-card__desc">
+                  妊婦・育児向け健康管理アプリのiOS（Objective-C）/ Android（Java）バージョンアップ・機能追加・不具合修正を担当。
+                </p>
+                <ul class="work-card__tags">
+                  <li>Objective-C</li>
+                  <li>Java</li>
+                  <li>iOS / Android</li>
+                </ul>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <div class="works__more">
+          <button class="btn btn--primary works__more-btn" id="worksMoreBtn" aria-expanded="false" aria-controls="worksGrid">
+            <span class="works__more-text">もっと見る</span>
+            <svg class="works__more-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section--alt">
+      <div class="container">
+        <p class="section__label">04 — Experience</p>
+        <h2 class="section__title">経歴</h2>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__date">2020.10 — 現在</div>
+            <div class="timeline__body">
+              <h3 class="timeline__title">フリーランス フルスタックエンジニア</h3>
+              <p>
+                日本企業向けの Web システム開発に専門特化。バックエンドは Laravel（PHP）を中心に、フロントエンドは React（Next.js）・Vue（Nuxt）、インフラは AWS まで一貫対応。
+                直近では外資系大手不動産の物件検索システム（Next.js 14・8名体制）、OpenAI API を組み込んだ商圏分析システム、医療 DX（歩行解析 AI 管理）、Stripe Connect によるマーケットプレイス型決済基盤など、要件定義・設計段階からの参画を中心に本番リリース・運用まで完遂。
+              </p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__date">2017.4 — 2020.3</div>
+            <div class="timeline__body">
+              <h3 class="timeline__title">UrbanMobi社（日本支社） / SE</h3>
+              <p>
+                日本のクライアントとの折衝・進行管理を直接担当しながら、モバイルアプリ開発に従事。
+                「まみぃメモ」（妊婦・育児向け健康管理）、「Kansai Special Coupon」（観光案内）、「すくすく成長曲線」（子どもの成長記録・PL として要件定義からストア申請・保守まで担当）など、iOS / Android アプリのリリース・運用を経験。Swift / Objective-C / Kotlin / Java / Firebase を中心に対応しました。
+              </p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__date">2015.4 — 2016.12</div>
+            <div class="timeline__body">
+              <h3 class="timeline__title">YASIN社（台湾） / デザイナー → SE</h3>
+              <p>
+                日本向け Web サイト・広告デザインの制作（Photoshop / Illustrator）からキャリアをスタートし、日本のデザイン慣習・商習慣を習得。
+                その後 Web システム＋アプリ開発の DB 設計・開発・結合テストと日本側との折衝・通訳を担当（Ruby on Rails / Django / Laravel / Java）。
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container container--narrow">
+        <p class="section__label">05 — Contact</p>
+        <h2 class="section__title">お問い合わせ</h2>
+        <p class="contact__lead">
+          お仕事のご相談やご質問など、お気軽にご連絡ください。
+        </p>
+        <ul class="contact__list">
+          <li class="contact__item">
+            <span class="contact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 4H2c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H2V8.99l10 5 10-5V18zM12 12L2 7h20l-10 5z"/>
+              </svg>
+            </span>
+            <span class="contact__label">Email</span>
+            <a href="mailto:shota.li@outlook.jp" class="contact__value">shota.li@outlook.jp</a>
+          </li>
+          <li class="contact__item">
+            <span class="contact__icon" aria-hidden="true">
+              <img src="assets/images/icons/chatwork.png" alt="Chatwork" loading="lazy">
+            </span>
+            <span class="contact__label">Chatwork</span>
+            <span class="contact__value">ID は別途ご案内します</span>
+          </li>
+          <li class="contact__item">
+            <span class="contact__icon" aria-hidden="true">
+              <img src="assets/images/icons/slack.svg" alt="Slack" loading="lazy">
+            </span>
+            <span class="contact__label">Slack</span>
+            <span class="contact__value">ワークスペースは別途共有します</span>
+          </li>
+        </ul>
+
+        <div class="contact__cta">
+          <a href="mailto:shota.li@outlook.jp" class="btn btn--primary">メールで問い合わせる</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

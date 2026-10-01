@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBRE Japan 物件検索・会員管理システム | 李翔太 Portfolio</title>
+  <meta name="description" content="世界最大の事業用不動産サービス会社 CBRE Japan の物件検索・会員管理 Web システムのフロントエンドリニューアル実績。Next.js 14 + Turborepo + AWS で構築。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">CBRE Japan 物件検索・会員管理 Web システム</h1>
+        <p class="work-detail__lead">
+          世界最大の事業用不動産サービス会社 CBRE の物件検索・会員管理システムのフロントエンドリニューアル。約26万件の物件データを扱う大規模サイトを Next.js 14 + Turborepo モノレポで構築。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Next.js 14</li>
+          <li>TypeScript 5</li>
+          <li>Turborepo</li>
+          <li>AWS Lambda</li>
+          <li>Cognito</li>
+          <li>ElastiCache Redis</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero work-detail__hero--shot">
+        <img src="../assets/images/works/cbre-1.jpg" alt="CBRE Japan 物件検索サイト トップページ">
+      </div>
+
+      <div class="work-detail__shots">
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/cbre-2.png" alt="CBRE Japan 物件検索画面" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/cbre-3.jpg" alt="CBRE Japan 物件検索画面" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/cbre-4.png" alt="CBRE Japan 物件検索画面" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            オフィス・店舗・物流施設等の物件検索、会員向けマイページ、コラム・イベント配信を担うユーザー向けサイトと管理画面のフロントエンドリニューアルに参画。
+            Turborepo モノレポ環境にて、フロントエンド実装と Next.js API 層の設計・組み込みを担当しました（バックエンド API・DB・インフラは別チームが担当）。
+          </p>
+
+          <h2>技術的課題</h2>
+          <ul>
+            <li>Next.js 14 の SSR/ISR を AWS Lambda 上で稼働させる構成のため、コンテナ間でキャッシュが共有されず、ページ再生成の負荷が集中する</li>
+            <li>ユーザー向け・管理者向けで別々の Cognito User Pool を利用しつつ、JWT 検証と API 権限制御を共通ライブラリで統一する必要がある</li>
+            <li>物件種別ごとに異なる検索条件（エリア・路線・坪数・賃料等）を扱う検索 UI・一覧表示の実装</li>
+          </ul>
+
+          <h2>主な担当</h2>
+          <ul>
+            <li>Turborepo + pnpm ワークスペースで、ユーザーサイト・管理画面・共有パッケージの型定義を TypeScript strict で共通化</li>
+            <li>Next.js 14（App Router）による物件検索・マイページ・お問い合わせフォームの実装と、withAuth / withPublicAccess による API 認可層の共通化</li>
+            <li>ユーザー向け・管理者向けの 2 つの Cognito User Pool を前提とした認証基盤の設計・実装（httpOnly Cookie + JWT 検証、ミドルウェアによるルート保護、トークン期限切れ時のリダイレクト処理）</li>
+            <li>@neshca/cache-handler + ElastiCache Redis による Next.js Data Cache の Lambda 間共有と、管理画面更新時にフロントのキャッシュを無効化する On-Demand Revalidation の組み込み</li>
+          </ul>
+
+          <h2>成果</h2>
+          <ul>
+            <li>本番稼働中。約 26 万件の物件データを扱う検索・一覧表示を安定提供</li>
+            <li>8名体制（フロントエンド6名＋DB・API 2名）でのコードレビュー・型共有・キャッシュ設計を踏まえたチーム開発を経験</li>
+          </ul>
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>クライアント</dt>
+              <dd>CBRE Japan（外資系大手不動産サービス）</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="https://www.cbre.co.jp/properties" target="_blank" rel="noopener">cbre.co.jp/properties</a></dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2025年7月 〜 2026年5月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>フロントエンドエンジニア（8名体制）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Next.js 14 / React 18 / TypeScript 5 / Tailwind CSS / Zod / Mantine / TipTap / AWS（Lambda + Lambda Web Adapter, CloudFront, Cognito, ElastiCache Redis, Aurora PostgreSQL 16）/ Turborepo / pnpm / GitHub Actions</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

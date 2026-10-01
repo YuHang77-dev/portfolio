@@ -1,0 +1,410 @@
+/* ==========================================================================
+   Work Detail Page
+   ========================================================================== */
+.work-detail {
+  padding: calc(var(--header-height) + 80px) 0 120px;
+}
+
+.work-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.work-detail__back:hover {
+  color: var(--color-accent);
+}
+
+.work-detail__back::before {
+  content: "←";
+  transition: transform var(--transition);
+}
+
+.work-detail__back:hover::before {
+  transform: translateX(-3px);
+}
+
+.work-detail__header {
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 48px;
+}
+
+.work-detail__title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.work-detail__lead {
+  font-size: 18px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+
+.work-detail__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.work-detail__tags li {
+  font-family: var(--font-display);
+  font-size: 13px;
+  padding: 6px 14px;
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.work-detail__hero {
+  aspect-ratio: 16 / 9;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.18), transparent 55%),
+    linear-gradient(135deg, var(--color-thumb-from), var(--color-thumb-to));
+  border-radius: var(--radius-lg);
+  margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  /* 実写スクショに色付きの発光は合わないので中立な浮きに変える */
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.work-detail__hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.work-detail__hero--icon img {
+  width: 35%;
+  height: auto;
+  max-height: 55%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.25));
+}
+
+/* Screenshot hero — image defines its own height (no 16:9 crop) */
+.work-detail__hero--shot {
+  aspect-ratio: auto;
+}
+
+.work-detail__hero--shot img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Phone screenshots side by side on the gradient backdrop */
+.work-detail__hero--phones {
+  aspect-ratio: auto;
+  padding: 48px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.work-detail__hero--phones img {
+  width: min(260px, 40%);
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================================================================
+   担当工程バッジ
+   ========================================================================== */
+.work-detail__phases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.work-detail__phases li {
+  padding: 7px 16px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-alt);
+  line-height: 1.4;
+}
+
+/* 箇条書き用の丸ドットは打たない */
+.work-detail__main .work-detail__phases li {
+  padding-left: 16px;
+  margin-bottom: 0;
+}
+
+.work-detail__main .work-detail__phases li::before {
+  content: none;
+}
+
+.work-detail__phases li.is-on {
+  background: var(--gradient-primary);
+  background-size: 200% 200%;
+  border-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  /* 小さなピルに強い発光は過剰なので控えめにする */
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.28);
+}
+
+/* ==========================================================================
+   Screenshot gallery (2〜4枚)
+   ========================================================================== */
+.work-detail__shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.work-detail__shots--mobile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+/* 3枚以上のときは2列固定にして1枚あたりを大きく見せる */
+.work-detail__shots:has(.work-detail__shot:nth-child(3)) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.work-detail__shot {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.work-detail__shot:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-grad-2);
+}
+
+.work-detail__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.work-detail__shot figcaption {
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+/* スクリーンショットは切り取らず全体を見せる（cover だと画面端の UI が欠ける） */
+.work-detail__shot--desktop,
+.work-detail__shot--tablet,
+.work-detail__shot--mobile {
+  justify-content: center;
+}
+
+.work-detail__shot--desktop {
+  aspect-ratio: 16 / 10;
+}
+
+.work-detail__shot--tablet {
+  aspect-ratio: 3 / 4;
+}
+
+.work-detail__shot--mobile {
+  aspect-ratio: 414 / 896;
+}
+
+.work-detail__shot--desktop img,
+.work-detail__shot--tablet img,
+.work-detail__shot--mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* 画像未配置のプレースホルダのみ、グラデーションの面で見せる */
+.work-detail__shot--empty {
+  aspect-ratio: 16 / 10;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-thumb-from), var(--color-thumb-to));
+  border-color: transparent;
+}
+
+.work-detail__shot--empty:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.work-detail__shot-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.work-detail__shot--empty figcaption {
+  border-top: none;
+  padding: 0;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  word-break: break-all;
+}
+
+@media (max-width: 640px) {
+  .work-detail__shots,
+  .work-detail__shots:has(.work-detail__shot:nth-child(3)) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Secondary screenshot below the hero */
+.work-detail__hero:has(+ .work-detail__gallery) {
+  margin-bottom: 24px;
+}
+
+.work-detail__gallery {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 64px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.work-detail__gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.work-detail__layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 64px;
+  align-items: start;
+}
+
+.work-detail__main h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.work-detail__main h2:first-child {
+  margin-top: 0;
+}
+
+.work-detail__main p {
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.work-detail__main ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.work-detail__main ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  line-height: 1.8;
+}
+
+.work-detail__main ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.work-detail__side {
+  position: sticky;
+  top: calc(var(--header-height) + 32px);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  padding: 28px;
+}
+
+.work-detail__side dl {
+  display: grid;
+  gap: 18px;
+}
+
+.work-detail__side dt {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.work-detail__side dd {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.work-detail__side dd a {
+  color: var(--color-accent);
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.work-detail__side dd a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .work-detail__layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .work-detail__side {
+    position: static;
+  }
+}

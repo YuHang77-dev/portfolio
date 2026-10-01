@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>unsealpass（コンビニシール購入者向け限定EC） | 李翔太 Portfolio</title>
+  <meta name="description" content="コンビニのマルチコピー機で販売するシールの購入者だけが限定グッズを購入できるEC。Expoアプリ・Next.js管理画面・Fastify APIを一人で構築。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">unsealpass（コンビニシール購入者向け限定EC）</h1>
+        <p class="work-detail__lead">
+          コンビニのマルチコピー機で販売するシールの購入者だけが、専用アプリ内で限定グッズを閲覧・購入できるEC。企画単位のQRとレシート画像審査で不正利用を抑え、未認証ユーザーには商品を出さない設計。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Expo SDK 56</li>
+          <li>Next.js 14</li>
+          <li>Fastify 5</li>
+          <li>PostgreSQL</li>
+          <li>Gemini 2.5 Flash</li>
+          <li>Stripe</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/unsealpass-1.png" alt="unsealpass" loading="lazy">
+      </div>
+
+      <div class="work-detail__shots">
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/unsealpass-2.png" alt="unsealpass" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/unsealpass-3.png" alt="unsealpass" loading="lazy">
+        </figure>
+      </div>
+      <div class="work-detail__shots--mobile">
+        <figure class="work-detail__shot work-detail__shot--mobile">
+          <img src="../assets/images/works/unsealpass-mobile-1.png" alt="unsealpass" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--mobile">
+          <img src="../assets/images/works/unsealpass-mobile-2.png" alt="unsealpass" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--mobile">
+          <img src="../assets/images/works/unsealpass-mobile-3.png" alt="unsealpass" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--mobile">
+          <img src="../assets/images/works/unsealpass-mobile-4.png" alt="unsealpass" loading="lazy">
+        </figure>
+      </div>
+
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            コンビニのマルチコピー機で販売するシールの購入者だけが、専用アプリ内で限定グッズを閲覧・購入できるECサービス。企画単位で発行するQRとレシート画像の審査により不正利用を抑え、未認証ユーザーには商品を表示しない構成としました。Expoアプリ・Next.js管理画面・Fastify APIをPostgreSQL同一スキーマ上で構築しています。
+          </p>
+          <h2>技術的課題</h2>
+          <ul>
+            <li>企画ごとに同一QRを発行するため、使い回し・改ざんレシートをOCRと決定的ルールで自動判定する必要があった</li>
+            <li>管理者（RS256 JWT＋TOTP＋3ロールRBAC）と一般ユーザー（HS256 JWT＋SMS OTP）で認証を分離しつつ、在庫引当と決済確定の整合を取る必要があった</li>
+          </ul>
+          <h2>主な担当</h2>
+          <ul>
+            <li>レシート審査をFastify上で実装。Gemini 2.5 Flash（Structured Output）で店舗・日時・金額を抽出し、jimpの知覚ハッシュと15ルールの決定的スコアで自動承認／差し戻し／手動審査へ分岐（アップロード応答後に非同期実行）</li>
+            <li>ユーザー認証は電話番号OTP（Amazon SNS）＋HS256 JWT、管理者はRS256 JWT＋TOTP（otplib）。秘密はAES-256-GCMで保管。reviewer / admin / super_adminを分離し、不正スコア80以上の操作はadmin以上に制限</li>
+            <li>注文作成時にPrismaトランザクションで在庫減算・引当。Stripe Checkoutで課金し、Webhook（生ボディの署名検証）でpaid / payment_failedを冪等更新</li>
+            <li>管理画面をNext.js 14 App Router＋Radix UI＋TanStack Queryで実装（企画とHMAC付きQR、審査キュー、ユーザー、商品、注文、通知、設定、KPI）</li>
+            <li>モバイルをExpo SDK 56／Expo Routerで実装（カメラQR、レシート投稿、カート、決済、SecureStore、Expo Push）</li>
+          </ul>
+          <h2>成果</h2>
+          <ul>
+            <li>ステージングはGitHub ActionsのセルフホストランナーからEC2＋PM2へ自動デプロイする構成を整備</li>
+            <li>モバイルはEASのproductionチャネルとストア審査用ログインまで実装済み</li>
+          </ul>
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>サービス</dt>
+              <dd>unsealpass</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="https://unsealpass.com" target="_blank" rel="noopener">unsealpass.com</a>（システム本体はログインが必要なため、サービス紹介ページを掲載）</dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2026年3月 〜 2026年8月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>フルスタックエンジニア（SE1名）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>管理画面: Next.js 14 / React 18 / TypeScript 5 / Tailwind 3 / TanStack Query 5 / Radix UI / Zod / Recharts ｜ モバイル: Expo SDK 56 / React Native 0.85 / Expo Router / NativeWind ｜ API: Node.js 20 / Fastify 5 / Prisma 6 / PostgreSQL / Stripe / Gemini 2.5 Flash / jimp / otplib ｜ インフラ: AWS EC2 / PM2 / Amazon SNS / GitHub Actions / EAS Build</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

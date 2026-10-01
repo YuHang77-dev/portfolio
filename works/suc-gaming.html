@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUC GAMING（ゲームサポート・マッチングプラットフォーム） | 李翔太 Portfolio</title>
+  <meta name="description" content="Stripe Connect によるマーケットプレイス型決済を備えたゲームスキルマッチングプラットフォーム「SUC Gaming」の開発実績。Laravel + Vue 2 で構築。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">SUC GAMING（ゲームサポート・マッチングプラットフォーム）</h1>
+        <p class="work-detail__lead">
+          依頼者と受託者をつなぐスキルマッチングサービス。案件の募集・応募、メッセージ、決済、レビュー、売上管理までを一貫提供。Stripe Connect によるマーケットプレイス型決済の設計・実装を中心に担当。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Laravel 8</li>
+          <li>Vue 2</li>
+          <li>Stripe Connect</li>
+          <li>マーケットプレイス決済</li>
+          <li>2段階認証</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero work-detail__hero--shot">
+        <img src="../assets/images/works/sucgaming.jpg" alt="SUC GAMING トップページ">
+      </div>
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            依頼者と受託者をつなぐスキルマッチングサービス。案件の募集・応募、メッセージ、決済、レビュー、売上管理までを一貫提供するプラットフォームの開発を担当。
+            特に Stripe Connect によるマーケットプレイス型決済の設計・実装を中心に、画面実装から管理画面まで担当しました。
+          </p>
+
+          <h2>技術的課題</h2>
+          <ul>
+            <li>Stripe Connect のマーケットプレイス決済で、PaymentIntent のオーソリ／キャプチャ、24 時間以内のキャンセル期限、デスティネーション取引とプラットフォーム経由送金の使い分けを整合させる必要</li>
+            <li>募集型・依頼型で売買の役割が入れ替わる取引フローに対し、注文ステータス遷移・検収／返金条件を一貫制御する設計</li>
+            <li>ログイン・会員情報変更時のメールベース 2 段階認証を既存メール認証フローと共存させる設計</li>
+          </ul>
+
+          <h2>主な担当</h2>
+          <ul>
+            <li>Stripe PaymentIntent / SetupIntent API と Webhook エンドポイントを設計し、決済・キャプチャ・返金・Connect OAuth 連携を構築</li>
+            <li>期限切れ決済の自動キャプチャと週次送金のバッチ運用（Artisan スケジューラ）、Connect 残高同期を実装</li>
+            <li>Laravel 8 + Vue 2 による案件一覧・注文詳細・マイページ等の画面実装、Stripe Elements によるカード登録・決済 UI の組み込み</li>
+            <li>3 階層カテゴリ・タグ・レビュー・フォロー等のマッチング基盤と管理画面（laravel-admin）の構築</li>
+            <li>メール認証・2 段階認証・キューによる非同期メール送信の実装</li>
+          </ul>
+
+          <h2>成果</h2>
+          <ul>
+            <li>決済・売上管理・2 段階認証を含む全機能を実装完了</li>
+            <li>現在クライアント検収中（2026 年 8 月リリース予定）</li>
+          </ul>
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>サービス</dt>
+              <dd>SUC GAMING</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="http://suc-gaming.net/" target="_blank" rel="noopener">suc-gaming.net</a></dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2025年10月 〜 2026年2月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>フルスタックエンジニア（SE1名＋PM＋デザイナー2名体制）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Laravel 8（PHP 8.0）/ Laravel Sanctum / stripe-php / Vue 2 / Bootstrap-Vue / MySQL</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

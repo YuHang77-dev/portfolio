@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>薩摩就活ナビ（就活支援プラットフォーム） | 李翔太 Portfolio</title>
+  <meta name="description" content="鹿児島の学生向け就活支援プラットフォーム。アドバイザー予約・求人／イベント検索機能を Bubble で構築。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">薩摩就活ナビ（就活支援プラットフォーム）</h1>
+        <p class="work-detail__lead">
+          鹿児島の学生向け就活支援プラットフォーム。自己分析・ES添削・面接対策のアドバイザー予約と、求人・イベント情報の検索機能を提供。Bubble による一人開発で全工程を担当。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Bubble</li>
+          <li>ノーコード</li>
+          <li>予約システム</li>
+          <li>検索機能</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/satsuma-1.png" alt="nocode-satsuma-navi" loading="lazy">
+      </div>
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/satsuma-2.png" alt="nocode-satsuma-navi" loading="lazy">
+      </div>
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            鹿児島の学生を対象とした就活支援プラットフォーム。自己分析・ES添削・面接対策といったアドバイザーへの予約機能と、求人・イベント情報の検索機能を提供するサービスを Bubble で構築しました。
+          </p>
+          <h2>主な担当</h2>
+          <ul>
+            <li>Bubble によるプラットフォーム全体の設計・構築（一人開発で全工程を担当）</li>
+            <li>アドバイザー予約機能（自己分析・ES添削・面接対策）の実装</li>
+            <li>求人情報・イベント情報の検索機能の実装</li>
+            <li>学生・アドバイザー双方の利用フローに沿った画面設計</li>
+            <li>リリース後の運用保守・機能追加</li>
+          </ul>
+          <h2>成果</h2>
+          <ul>
+            <li>学生とアドバイザーをつなぐ就活支援プラットフォームとして本番稼働中</li>
+          </ul>
+          <h2>担当工程</h2>
+          <ul class="work-detail__phases" aria-label="担当工程">
+            <li class="work-detail__phase is-on">要件定義</li>
+            <li class="work-detail__phase is-on">基本設計</li>
+            <li class="work-detail__phase is-on">詳細設計</li>
+            <li class="work-detail__phase is-on">実装</li>
+            <li class="work-detail__phase is-on">テスト</li>
+            <li class="work-detail__phase is-on">運用保守</li>
+          </ul>
+
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>サービス</dt>
+              <dd>薩摩就活ナビ</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="https://satsumasyukatsu.jp" target="_blank" rel="noopener">satsumasyukatsu.jp</a></dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2026年1月 〜 2026年2月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>一人開発（設計〜修正まで全工程）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Bubble</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

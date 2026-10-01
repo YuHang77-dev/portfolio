@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地域密着型不動産サイト リニューアル（PL） | 李翔太 Portfolio</title>
+  <meta name="description" content="埼玉県エリア特化の不動産仲介会社公式サイト。7,000件以上の物件検索プラットフォームのリニューアルをPLとして技術リード。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">地域密着型不動産サイト リニューアル（PL）</h1>
+        <p class="work-detail__lead">
+          埼玉県（さいたま市・川口市・蕨市・戸田市）エリアに特化した不動産仲介会社の公式サイト。7,000件以上の公開物件と会員限定の非公開物件を扱う検索プラットフォームのリニューアルを、PLとして技術リード。
+        </p>
+        <ul class="work-detail__tags">
+          <li>WordPress</li>
+          <li>PL / 技術リード</li>
+          <li>物件検索UI</li>
+          <li>JSON-LD</li>
+          <li>レスポンシブ</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/next-realplan-1.png" alt="townwork" loading="lazy">
+      </div>
+      
+      <div class="work-detail__shots">
+        <figure class="work-detail__shot work-detail__shot--empty">
+          <img src="../assets/images/works/next-realplan-2.png" alt="townwork" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--empty">
+          <img src="../assets/images/works/next-realplan-3.png" alt="townwork" loading="lazy">
+        </figure>
+      </div>
+
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            埼玉県エリア特化の不動産仲介会社公式サイト。一戸建て・マンション・土地の売買仲介、注文建築・賃貸管理・空き家サポート・LINE査定等を扱い、7,000件以上の公開物件と会員限定の非公開物件紹介にも対応する物件検索プラットフォームのリニューアルを、PL（8名体制）として技術リードしました。
+          </p>
+          <h2>技術的課題</h2>
+          <ul>
+            <li>既存サイトのデザイン・UIの老朽化</li>
+            <li>物件種別ごとの検索導線に加え、価格帯別検索等の多角的な検索軸の整備</li>
+            <li>多岐にわたるサービス情報の情報設計</li>
+            <li>コンテンツを社内で迅速に更新・管理できるCMS基盤の再構築</li>
+          </ul>
+          <h2>主な担当</h2>
+          <ul>
+            <li>PLとして開発チーム（6〜10名）の技術リード・タスク管理・品質管理を統括</li>
+            <li>WordPressカスタムテーマによるサイトリニューアルの設計・実装ディレクション</li>
+            <li>物件検索機能のUI/UX改善（多軸検索インターフェース）</li>
+            <li>Slick Carouselによるメインビジュアル・おすすめ物件スライダーの実装</li>
+            <li>PC/SP対応レスポンシブデザインの実装（Retina対応）</li>
+            <li>Google Analytics / Google Ads / Mieru-caによる分析・集客基盤の構築</li>
+            <li>Schema.org（JSON-LD）構造化データの実装</li>
+          </ul>
+          <h2>成果</h2>
+          <ul>
+            <li>物件検索UIの刷新により、条件に合った物件を素早く発見できる直感的な検索体験を実現</li>
+            <li>WordPress CMSの再構築により社内での迅速な更新体制を確立</li>
+          </ul>
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>クライアント</dt>
+              <dd>地域密着型 不動産仲介会社（埼玉県）</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="https://www.next-rp.co.jp/" target="_blank" rel="noopener">next-rp.co.jp</a></dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2022年2月 〜 2022年4月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>PL（プロジェクトリーダー・8名体制・技術リード）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>WordPress（カスタムテーマ）/ HTML5 / CSS3 / JavaScript / jQuery / Slick Carousel / Google Tag Manager / Google Analytics / Google Ads / Mieru-ca / Schema.org 構造化データ（JSON-LD）</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

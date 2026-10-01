@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美容サロン FC 向け 会員 EC・予約管理システム | 李翔太 Portfolio</title>
+  <meta name="description" content="フランチャイズ展開する美容サロン向け会員 EC・予約管理システムの開発実績。Laravel 12 + Twig + PAY.JP + AWS で構築。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">美容サロン FC 向け 会員 EC・予約管理システム</h1>
+        <p class="work-detail__lead">
+          フランチャイズ展開する美容サロン向けに、会員向け Web ポータル（EC・施術申込・予約・マイページ）と、本部・店舗・メーカー向け管理システムの 2 アプリケーション構成をゼロから開発。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Laravel 12</li>
+          <li>Twig</li>
+          <li>PAY.JP</li>
+          <li>AWS</li>
+          <li>マルチガード認証</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/guinot.png" alt="Guinot">
+      </div>
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            フランチャイズ展開する美容サロン向けに、会員向け Web ポータル（EC・施術申込・予約・マイページ）と、本部・店舗・メーカー向け管理システムの 2 アプリケーション構成をゼロから開発。
+            各ロールの業務フロー整理・画面仕様策定から実装・インフラまで担当しました。
+          </p>
+
+          <h2>技術的課題</h2>
+          <ul>
+            <li>スタッフ・施術ベッド・機材の空き状況を 15 分単位で突合し、ダブルブッキングを防ぐ予約空き枠算出</li>
+            <li>本部・店舗・メーカーの複数認証ガードとスラッグベース権限による、ドメイン別に分離したアクセス制御</li>
+            <li>PAY.JP 連携におけるカード登録コールバックの改ざん防止（JWT 署名）と、注文・施術申込時の決済処理の一貫性確保</li>
+          </ul>
+
+          <h2>主な担当</h2>
+          <ul>
+            <li>Laravel 12 + Twig による会員向け EC・施術申込・予約・マイページ機能の設計・実装</li>
+            <li>Repository パターンによる予約・注文・売上データアクセス層の分離と、トランザクション付き決済・受注処理の実装</li>
+            <li>PAY.JP SDK による Customer / Charge 連携と、JWT 署名によるカード登録コールバックの保護</li>
+            <li>管理側のマルチガード認証（本部・店舗・メーカー）とロールによる機能別権限制御の実装</li>
+            <li>AWS EC2・RDS によるインフラ構築、Amazon SES による通知基盤、GitHub Actions から EC2 への自動デプロイ（CI/CD）の構築</li>
+          </ul>
+
+          <h2>成果</h2>
+          <ul>
+            <li>予約・決済・受注・組織管理を一体化した FC 事業の基幹システムを構築</li>
+            <li>本番反映を自動化した継続開発可能な体制を確立</li>
+          </ul>
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>クライアント</dt>
+              <dd>美容サロン フランチャイズ本部</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="https://guinot-paris.shop/" target="_blank" rel="noopener">guinot-paris.shop</a></dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2025年9月 〜 2025年11月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>フルスタックエンジニア（2名体制・要件整理から担当）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Laravel 12（PHP 8.2）/ Twig / Tailwind CSS 4 / Vite / Laravel Sanctum / PAY.JP / AWS（EC2, RDS for MySQL, SES）/ GitHub Actions</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

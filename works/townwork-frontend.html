@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タウンワーク フロントエンドリニューアル | 李翔太 Portfolio</title>
+  <meta name="description" content="株式会社リクルート運営の国内最大級アルバイト・パート求人情報サービス「タウンワーク」のNext.js移行プロジェクト。12名体制で参画。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">タウンワーク フロントエンドリニューアル</h1>
+        <p class="work-detail__lead">
+          株式会社リクルートが運営する国内最大級のアルバイト・パート求人情報サービス。毎週約90万件の求人情報を扱う既存フロントエンド基盤を Next.js（React）へ移行するリニューアルプロジェクトに参画。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Next.js</li>
+          <li>React</li>
+          <li>TypeScript</li>
+          <li>SSR</li>
+          <li>AWS RUM</li>
+          <li>Google Maps API</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/townwork-1.png" alt="townwork" loading="lazy">
+      </div>
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/townwork-2.png" alt="townwork" loading="lazy">
+      </div>
+
+      
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            株式会社リクルートが運営する国内最大級のアルバイト・パート求人情報サービス。毎週約90万件の求人情報を扱うサービスの既存フロントエンド基盤を、Next.js（React）へ移行するリニューアルプロジェクトに12名体制で参画しました。
+          </p>
+          <h2>技術的課題</h2>
+          <ul>
+            <li>既存フロントエンド基盤の技術的負債（機能追加・UI改修のスピード・保守性）</li>
+            <li>求人検索・応募導線・マイページ等の画面数の多さに伴うSSR対応・パフォーマンス最適化</li>
+            <li>PC・スマートフォン両デバイスでの最適な表示・操作体験</li>
+            <li>Google Maps API・LINE連携・SSO認証等の外部サービス統合の整合性確保</li>
+          </ul>
+          <h2>主な担当</h2>
+          <ul>
+            <li>Next.js（React）によるフロントエンドリニューアル（SSR活用、初期表示速度・SEO最適化）</li>
+            <li>求人検索・詳細画面のUI/UX改善（コンポーネント設計）</li>
+            <li>PC/SP判定によるデバイス最適化ロジックの実装</li>
+            <li>Google Maps API・LINE連携・SSO認証・履歴書管理・ポイント機能等の外部サービス連携移行</li>
+            <li>AWS RUM（Real User Monitoring）の導入・運用</li>
+            <li>Google Tag Manager・Google Analyticsによる分析基盤整備</li>
+          </ul>
+          <h2>成果</h2>
+          <ul>
+            <li>Next.js移行によりSSRでの初期表示速度向上・SEO最適化を実現</li>
+            <li>コンポーネント設計見直しにより開発効率・保守性が向上</li>
+          </ul>
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>サービス</dt>
+              <dd>タウンワーク（株式会社リクルート）</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="https://townwork.net/" target="_blank" rel="noopener">townwork.net</a></dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2023年1月 〜 2023年12月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>フルスタックエンジニア（12名体制）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Next.js / React / TypeScript / AWS RUM / Google Maps API / LINE SDK / SSO認証 / Google Tag Manager / Google Analytics</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

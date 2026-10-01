@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サカチムプラス（チームHP作成SaaS・自社開発） | 李翔太 Portfolio</title>
+  <meta name="description" content="サッカー・フットサル等のチーム専用ホームページを誰でも作成できるマルチテナント型 SaaS。企画から一人で開発。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">サカチムプラス（チームHP作成SaaS・自社開発）</h1>
+        <p class="work-detail__lead">
+          「誰でも簡単に作れる」サッカー・フットサル等のチーム専用ホームページ作成 SaaS。チームごとに専用ページを発行するマルチテナント設計を Bubble で実装し、企画から運用まで一人で担当。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Bubble</li>
+          <li>ノーコード</li>
+          <li>SaaS</li>
+          <li>マルチテナント</li>
+          <li>自社開発</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/sakachim-1.png" alt="nocode-sakachim-plus" loading="lazy">
+      </div>
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/sakachim-2.png" alt="nocode-sakachim-plus" loading="lazy">
+      </div>
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            サッカー・フットサル等のチームが「誰でも簡単に」専用ホームページを作成できる自社開発 SaaS。チームごとに専用ページを発行するマルチテナント設計を Bubble 上で実現しました。企画・設計から実装・運用まで一人で担当しています。
+          </p>
+          <h2>技術的課題</h2>
+          <ul>
+            <li>チームごとに独立したページを発行するマルチテナント構成を、ノーコード環境で実現する設計</li>
+            <li>ITに詳しくないチーム運営者でも迷わず編集できる管理画面の設計</li>
+          </ul>
+          <h2>主な担当</h2>
+          <ul>
+            <li>サービス企画・要件定義から実装・運用まで一人で担当</li>
+            <li>Bubble によるマルチテナント設計（チーム単位の専用ページ発行）</li>
+            <li>チーム運営者向けのページ編集機能の設計・実装</li>
+            <li>リリース後の運用保守・機能追加</li>
+          </ul>
+          <h2>成果</h2>
+          <ul>
+            <li>自社開発 SaaS として本番稼働中</li>
+            <li>実例サイト（sctm.jp）の稼働を確認</li>
+          </ul>
+          <h2>担当工程</h2>
+          <ul class="work-detail__phases" aria-label="担当工程">
+            <li class="work-detail__phase is-on">要件定義</li>
+            <li class="work-detail__phase is-on">基本設計</li>
+            <li class="work-detail__phase is-on">詳細設計</li>
+            <li class="work-detail__phase is-on">実装</li>
+            <li class="work-detail__phase is-on">テスト</li>
+            <li class="work-detail__phase is-on">運用保守</li>
+          </ul>
+
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>サービス</dt>
+              <dd>サカチムプラス（自社開発 SaaS）</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="https://sctm.jp/" target="_blank" rel="noopener">sctm.jp</a>（実例サイト）</dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2026年1月 〜 2026年4月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>自社開発・一人開発（企画・設計〜修正まで全工程）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Bubble</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

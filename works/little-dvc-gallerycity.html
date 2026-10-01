@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GalleryCity（リトル・ダビンチ） | 李翔太 Portfolio</title>
+  <meta name="description" content="子どもの作品を家族で共有し、AI 評価・コンクール応募ができるギャラリープラットフォーム。Vue 3 + Laravel + OpenAI GPT-4o で構築。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">GalleryCity（リトル・ダビンチ）</h1>
+        <p class="work-detail__lead">
+          子どもの絵画・工作などの作品を家族単位で共有・保管し、コンクール応募、ポイントによるいいね、AI による作品評価コメントを提供する Web アプリケーション。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Vue 3</li>
+          <li>TypeScript</li>
+          <li>Laravel 9</li>
+          <li>OpenAI GPT-4o</li>
+          <li>Square 決済</li>
+          <li>GCS</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/little-dvc.com-1.jpg" alt="メインビジュアル画像" loading="lazy">
+      </div>
+
+      <div class="work-detail__shots--mobile">
+        <figure class="work-detail__shot work-detail__shot--mobile">
+          <img src="../assets/images/works/little-dvc.com-2.png" alt="GalleryCity ホーム" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--mobile">
+          <img src="../assets/images/works/little-dvc.com-3.png" alt="GalleryCity 作品詳細画面" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--mobile">
+          <img src="../assets/images/works/little-dvc.com-4.png" alt="GalleryCity ポイント購入画面" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--mobile">
+          <img src="../assets/images/works/little-dvc.com-5.png" alt="GalleryCity 受賞者発表画面" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            子どもの絵画・工作などの作品を家族単位で共有・保管し、コンクール応募、ポイントによるいいね、AI による作品評価コメントを提供する Web アプリケーション。
+            Vue 3 SPA と Laravel API の前後分離構成で、バックエンド設計（UseCase / DTO パターン）とフロントエンド実装を担当しました。
+          </p>
+
+          <h2>技術的課題</h2>
+          <ul>
+            <li>OpenAI API（GPT-4o）との連携における応答遅延時のタイムアウト制御（2 段階リトライ）と、処理中プレースホルダによる重複評価の防止</li>
+            <li>作品画像のアップロード時に 4 サイズ（サムネイル〜オリジナル）を生成・保存し、DB トランザクションとの整合性を確保</li>
+            <li>家族・子ども・作品単位の権限判定（コンクール応募状態に応じた閲覧制御を含む）の一貫した適用</li>
+          </ul>
+
+          <h2>主な担当</h2>
+          <ul>
+            <li>Laravel + UseCase / DTO 構成による REST API 設計・実装（作品 CRUD、コンクール応募、家族管理、チャット、通知）</li>
+            <li>Vue 3 + TypeScript + Pinia による SPA 構築（作品投稿・一覧、決済モーダル、AI 評価 UI、コンクール応募フロー）</li>
+            <li>Intervention Image + Google Cloud Storage による作品画像のマルチサイズ変換・アップロード処理</li>
+            <li>Square API 連携によるポイント購入・応募料・商品購入の決済処理</li>
+            <li>Laravel Socialite（LINE / Google / Facebook / Yahoo）による OAuth 認証と家族招待フローの実装</li>
+          </ul>
+
+          <h2>成果</h2>
+          <ul>
+            <li>本番稼働中。プライバシーに配慮した家族限定共有と AI 評価・決済を組み込んだ継続利用型サービスとしてリリース</li>
+            <li>AI 機能（GPT-4o 作品評価）のプロダクト組み込みを設計から実装まで完遂</li>
+          </ul>
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>サービス</dt>
+              <dd>リトル・ダビンチ / Little Da Vinci</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="https://little-dvc.com/gallerycity/" target="_blank" rel="noopener">little-dvc.com/gallerycity/</a></dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2025年4月 〜 2025年9月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>フルスタックエンジニア（PM1名・SE2名体制）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Vue 3 / TypeScript 5 / Pinia / Vite / Tailwind CSS / Laravel 9（PHP 8.0）/ MySQL 8 / Google Cloud Storage / OpenAI API（GPT-4o）/ Square / Docker</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

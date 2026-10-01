@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>歩行解析 AI 管理システム「MePT」（医療 DX） | 李翔太 Portfolio</title>
+  <meta name="description" content="リハビリ患者の歩行計測データを管理する医療 DX システム「MePT」の開発実績。Next.js 15 + Python Lambda + DynamoDB + Cognito で構築。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">歩行解析 AI 管理システム「MePT」（医療 DX）</h1>
+        <p class="work-detail__lead">
+          変形性股関節症等のリハビリ患者の歩行計測データを、理学療法士（PT）がモバイルアプリで記録し、医療機関管理者が Web 管理画面で閲覧・運用する医療 DX システム。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Next.js 15</li>
+          <li>Python Lambda</li>
+          <li>DynamoDB</li>
+          <li>Cognito</li>
+          <li>AI 推論連携</li>
+          <li>医療 DX</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/mept-1.png" alt="MePT" loading="lazy">
+      </div>
+
+      <div class="work-detail__shots">
+        <figure class="work-detail__shot work-detail__shot--tablet">
+          <img src="../assets/images/works/mept-3.png" alt="MePT" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/mept-2.jpg" alt="MePT" loading="lazy">
+        </figure>
+      </div>
+
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            変形性股関節症等のリハビリ患者の歩行計測データを、理学療法士（PT）がモバイルアプリで記録し、医療機関管理者が Web 管理画面で閲覧・運用するシステム。
+            管理者向け Next.js フロントエンドと、AWS Lambda（Python）による REST API（患者・PT・計測管理、AI 推論連携）の設計・実装を担当しました。
+          </p>
+
+          <h2>技術的課題</h2>
+          <ul>
+            <li>管理者用・PT 用の 2 系統 Cognito ユーザープールによるマルチテナント分離と、API Gateway カスタムオーソライザー（JWT / JWKS 検証）による認可設計</li>
+            <li>DynamoDB の 1MB クエリ制限・1,000 件超の計測データ一覧に対するページネーションと件数集計の効率化</li>
+            <li>S3 上の歩行動画を一時クレデンシャルの署名付き URL で取得し、グラフと動画再生位置を同期表示する UI の実装</li>
+          </ul>
+
+          <h2>主な担当</h2>
+          <ul>
+            <li>Next.js 15（App Router）による医療機関管理者向け画面（PT・患者 CRUD、計測一覧・推移比較）と BFF API Route の実装</li>
+            <li>Cognito 連携の認証基盤（サインアップ・ログイン・Cookie ベースのミドルウェア保護・トークン再取得）の構築</li>
+            <li>Python Lambda 30 関数超の CRUD API（DynamoDB）と、PT アカウントの Cognito 自動発行の実装</li>
+            <li>計測イベント登録時に AI 推論 Lambda を非同期起動し、推論結果を DynamoDB へ一括反映するパイプラインの設計</li>
+            <li>Chart.js による関節角度・股関節累積負荷の可視化と、最大 7 件の計測推移比較画面の実装</li>
+          </ul>
+
+          <h2>成果</h2>
+          <ul>
+            <li>担当分（医療機関向け管理システム）は 2025 年 6 月に納品完了。サービスは順次リリース</li>
+            <li>医療機関に求められるセキュリティ・権限要件を満たす管理基盤を構築</li>
+          </ul>
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>分野</dt>
+              <dd>Kinetech 社（東京科学大学発ベンチャー）／医療・リハビリ DX</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd><a href="https://www.kinetech.co.jp/mept.html" target="_blank" rel="noopener">kinetech.co.jp/mept.html</a>（サービス紹介ページ。管理システム本体は医療機関向けのため非公開）</dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2025年2月 〜 2025年4月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>バックエンド・管理画面担当（SE1名）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Next.js 15 / React 19 / TypeScript 5 / Tailwind CSS 4 / Chart.js / AWS Lambda（Python 3.12）/ API Gateway / DynamoDB / S3 / Cognito（2 ユーザープール + Identity Pool）</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

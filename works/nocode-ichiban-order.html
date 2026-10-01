@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一番飯店 オーダー管理システム | 李翔太 Portfolio</title>
+  <meta name="description" content="高田馬場の老舗中華料理店向けオーダー管理システム。約2週間でベータ版リリース。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">一番飯店 オーダー管理システム</h1>
+        <p class="work-detail__lead">
+          高田馬場の老舗中華料理店向けのオーダー管理システム。ノーコード受託開発会社の一員として、約2週間でベータ版をリリース。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Bubble</li>
+          <li>ノーコード</li>
+          <li>飲食店DX</li>
+          <li>業務システム</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">一番飯店 オーダー管理</div>
+
+      <div class="work-detail__shots">
+        <figure class="work-detail__shot work-detail__shot--empty">
+          <span class="work-detail__shot-label">SCREENSHOT 1</span>
+          <figcaption>画像差し替え: assets/images/works/nocode-ichiban-order-1.jpg</figcaption>
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--empty">
+          <span class="work-detail__shot-label">SCREENSHOT 2</span>
+          <figcaption>画像差し替え: assets/images/works/nocode-ichiban-order-2.jpg</figcaption>
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--empty">
+          <span class="work-detail__shot-label">SCREENSHOT 3</span>
+          <figcaption>画像差し替え: assets/images/works/nocode-ichiban-order-3.jpg</figcaption>
+        </figure>
+      </div>
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            高田馬場の老舗中華料理店向けに開発したオーダー管理システム。株式会社Walkers（ノーコード受託開発会社）の一員として参画し、設計から実装・運用保守までを一人で担当しました。
+          </p>
+          <h2>技術的課題</h2>
+          <ul>
+            <li>飲食店の繁忙時にも使える、素早く入力できるオーダー画面の設計</li>
+            <li>短納期での立ち上げが求められる中での、要件の優先順位付け</li>
+          </ul>
+          <h2>主な担当</h2>
+          <ul>
+            <li>店舗ヒアリングを踏まえた要件定義・業務フローの整理</li>
+            <li>Bubble によるオーダー管理機能の設計・実装</li>
+            <li>店舗スタッフが扱いやすい操作画面の設計</li>
+            <li>リリース後の運用保守・改善対応</li>
+          </ul>
+          <h2>成果</h2>
+          <ul>
+            <li>約2週間でベータ版をリリース</li>
+            <li>導入後、業務負担を約50%削減（公開情報ベース）</li>
+          </ul>
+          <h2>担当工程</h2>
+          <ul class="work-detail__phases" aria-label="担当工程">
+            <li class="work-detail__phase is-on">要件定義</li>
+            <li class="work-detail__phase is-on">基本設計</li>
+            <li class="work-detail__phase is-on">詳細設計</li>
+            <li class="work-detail__phase is-on">実装</li>
+            <li class="work-detail__phase is-on">テスト</li>
+            <li class="work-detail__phase is-on">運用保守</li>
+          </ul>
+
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>クライアント</dt>
+              <dd>一番飯店（高田馬場の老舗中華料理店）</dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2026年6月 〜 2026年12月</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>株式会社Walkers の一員として一人開発（設計〜修正まで全工程）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Bubble</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

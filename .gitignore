@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Thumbnails
+.Thumbs.db
+ehthumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (if added later)
+node_modules/
+.env
+.env.local
+
+# OS misc
+*~
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+# Vercel artifacts (if used)
+.vercel
+
+lshota.github.io

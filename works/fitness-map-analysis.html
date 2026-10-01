@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GYMLOCATION（商圏分析SaaS） | 李翔太 Portfolio</title>
+  <meta name="description" content="全国のフィットネス施設×人口統計で商圏分析を支援する AI 検索機能付きマップシステムの開発実績。Vue 3 + Laravel 12 + OpenAI API で構築。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/works.css">
+
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">李翔太</a>
+      <div class="header__right">
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li><a href="../index.html#about" class="nav__link">About</a></li>
+            <li><a href="../index.html#skills" class="nav__link">Skills</a></li>
+            <li><a href="../index.html#works" class="nav__link">Works</a></li>
+            <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+            <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="テーマを切り替え">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-detail">
+    <div class="container">
+      <a href="../index.html#works" class="work-detail__back">作品一覧へ戻る</a>
+
+      <div class="work-detail__header">
+        <h1 class="work-detail__title">GYMLOCATION（フィットネス業界向け 商圏分析SaaS）</h1>
+        <p class="work-detail__lead">
+          全国のフィットネス施設を地図上に可視化し、e-Stat の人口統計と組み合わせて商圏分析・立地検討を支援する AI 検索機能付き Web システム。技術選定から一貫担当。
+        </p>
+        <ul class="work-detail__tags">
+          <li>Vue 3</li>
+          <li>Laravel 12</li>
+          <li>OpenAI API</li>
+          <li>Google Maps</li>
+          <li>e-Stat API</li>
+        </ul>
+      </div>
+
+      <div class="work-detail__hero">
+        <img src="../assets/images/works/gymlocation-1.png" alt="gymlocation" loading="lazy">
+      </div>
+
+      <div class="work-detail__shots">
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/gymlocation-2.jpg" alt="gymlocation" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/gymlocation-3.png" alt="gymlocation" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/gymlocation-4.jpg" alt="gymlocation" loading="lazy">
+        </figure>
+        <figure class="work-detail__shot work-detail__shot--desktop">
+          <img src="../assets/images/works/gymlocation-5.png" alt="gymlocation" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="work-detail__layout">
+        <div class="work-detail__main">
+          <h2>概要</h2>
+          <p>
+            全国のフィットネス施設を地図上に可視化し、e-Stat の人口統計と組み合わせて商圏分析・立地検討を支援する Web システム。
+            ユーザー向けフロント（Vue 3）と管理画面・API（Laravel 12）の 2 アプリケーション構成で、技術スタック選定からフロント・バックエンド・インフラまで一貫して担当しています。
+          </p>
+
+          <h2>技術的課題</h2>
+          <ul>
+            <li>自然言語の検索入力を OpenAI で意図 JSON 化し、施設 DB・e-Stat 人口統計（メッシュ・行政区域）・設備条件を連携させる複合検索フローの設計</li>
+            <li>地図上での大量施設表示の負荷対策と、e-Stat API のメッシュコード算出・バッチ取得による API コール数の抑制</li>
+            <li>プラン別（standard / premium）の API 機能制御と、管理画面・ユーザー API の認証方式の分離</li>
+          </ul>
+
+          <h2>主な担当</h2>
+          <ul>
+            <li>Vue 3 + TypeScript + Google Maps JS API による地図 UI、半径別人口集計・月商ポテンシャル算出、調査報告書の PDF 生成（html2canvas / jsPDF）を実装</li>
+            <li>Laravel 12 による API 設計（Repository 層）。施設 CRUD・CSV インポート・ジオコーディング・周辺施設情報 API を提供</li>
+            <li>OpenAI Chat Completions と e-Stat REST 3.0 を組み合わせた AI アシスタント（意図解析→データ取得→回答生成）をサーバー側オーケストレーターとして設計・実装</li>
+            <li>Twig + Tailwind CSS 4 + Alpine.js による管理画面（施設・ユーザー・修正申請・レポート分析）の構築</li>
+            <li>GitHub Actions から EC2 / Nginx への自動デプロイ（CI/CD）を構成</li>
+          </ul>
+
+          <h2>成果</h2>
+          <ul>
+            <li>約 12 万件の施設データを扱う分析基盤を構築</li>
+            <li>現在ステージング環境で検証中（リリース準備段階）</li>
+          </ul>
+        </div>
+
+        <aside class="work-detail__side">
+          <dl>
+            <div>
+              <dt>サービス</dt>
+              <dd>GYMLOCATION（フィットネス業界向け 商圏分析SaaS）</dd>
+            </div>
+            <div>
+              <dt>URL</dt>
+              <dd>非公開（ステージング検証中・リリース準備段階）</dd>
+            </div>
+            <div>
+              <dt>期間</dt>
+              <dd>2026年2月 〜 現在（継続中）</dd>
+            </div>
+            <div>
+              <dt>役割</dt>
+              <dd>フルスタックエンジニア（SE1名・技術選定から担当）</dd>
+            </div>
+            <div>
+              <dt>環境</dt>
+              <dd>Vue 3 / TypeScript 5 / Vite 7 / Laravel 12（PHP 8.2）/ MySQL / AWS EC2 / Nginx / GitHub Actions / OpenAI API（gpt-4o-mini）/ e-Stat REST API 3.0 / Google Maps API（JavaScript・Geocoding・Places）</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> 李翔太. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
